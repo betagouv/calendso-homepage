@@ -30,10 +30,9 @@ app.get('/', (req, res) => {
   res.render('landing')
 })
 
-app.get('/mentions-legales', (req, res) => {
-  res.render('legalNotice', {
-    pageTitle: "Mentions légales",
-    contactEmail: 'mon-produit@beta.gouv.fr',
+app.get('/privacy-policy', (req, res) => {
+  res.render('privacy_policy', {
+    pageTitle: "Politique de confidentialité",
   })
 })
 
