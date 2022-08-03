@@ -9,6 +9,6 @@ server {
         proxy_pass http://app_server;
     }
     location ~ /(.*)+ {
-        return 301 <%= ENV['APP_URL'] %>;
+        return 301 <%= ENV['APP_URL'] %>/$1;
     }
 }
