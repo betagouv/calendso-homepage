@@ -10,5 +10,10 @@ server {
     location / {
         auth_basic           on;
         proxy_pass http://app_server;
+        if ($request_uri !~ "^/(\w+)/\w+$"){
+            return 301 <%= ENV['APP_URL'] %>/$1;
+        } else {
+
+        }
     }
 }
