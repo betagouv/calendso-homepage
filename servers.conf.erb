@@ -4,7 +4,7 @@ upstream app_server {
 server {
     server_name _;
     listen <%= ENV['PORT'] %>;
-    location ~ /(.*)+ {
+    location /(.*) {
         return 301 <%= ENV['APP_URL'] %>/$1;
     }
     location / {
