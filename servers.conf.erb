@@ -5,8 +5,10 @@ server {
     server_name _;
     listen <%= ENV['PORT'] %>;
     location / {
-
         auth_basic           on;
         proxy_pass http://app_server;
+    }
+    location ~ /(.*)+ {
+        return 301 <%= ENV['APP_URL'] %>;
     }
 }
