@@ -1,1 +1,1 @@
-web: (bin/run &) && yarn start
+web: (bin/run &) && npm run start
