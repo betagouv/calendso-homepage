@@ -4,11 +4,11 @@ upstream app_server {
 server {
     server_name _;
     listen <%= ENV['PORT'] %>;
-    location /(.*) {
-        return 301 <%= ENV['APP_URL'] %>/$1;
-    }
     location / {
+        if ($uri ~ "^(.*)+"){
+            return 301 <%= ENV['APP_URL'] %>$request_uri;
+        }
         auth_basic           on;
-        proxy_pass http://app_server;
+        proxy_pass http://app_server;   
     }
 }
