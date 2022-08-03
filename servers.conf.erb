@@ -9,6 +9,10 @@ server {
         proxy_pass http://app_server;  
     }
     location / {
-        return 301 <%= ENV['APP_URL'] %>$request_uri; 
+        if ($request_uri) {
+            return 301 <%= ENV['APP_URL'] %>$request_uri;
+        }
+        auth_basic           on;
+        proxy_pass http://app_server; 
     }
 }
