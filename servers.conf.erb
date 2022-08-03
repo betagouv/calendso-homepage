@@ -9,10 +9,12 @@ server {
         proxy_pass http://app_server;  
     }
     location ^~ /static/ {
-        include common_settings;
+        auth_basic           on;
+        proxy_pass http://app_server;  
     }
     location ^~ /~/ {
-        include common_settings;
+        auth_basic           on;
+        proxy_pass http://app_server;  
     }
     location / {
         return 301 <%= ENV['APP_URL'] %>$request_uri; 
