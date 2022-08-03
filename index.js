@@ -6,7 +6,7 @@ const appName = `Calendso`
 const appDescription = "Calendso de l'incubateur beta.gouv.fr"
 const appUrl = process.env.APP_URL
 const appRepo = 'https://github.com/betagouv/calendso-homepage'
-const port = process.env.PORT || 8080
+const port = process.env.APP_PORT || process.env.PORT || 8080
 
 const app = express()
 
