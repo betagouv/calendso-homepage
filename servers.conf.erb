@@ -8,6 +8,12 @@ server {
         auth_basic           on;
         proxy_pass http://app_server;  
     }
+    location ^~ /static/ {
+        include common_settings;
+    }
+    location ^~ /~/ {
+        include common_settings;
+    }
     location / {
         return 301 <%= ENV['APP_URL'] %>$request_uri; 
     }
