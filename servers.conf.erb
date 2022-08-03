@@ -8,8 +8,8 @@ server {
         return 301 <%= ENV['APP_URL'] %>/$1;
     }
     location / {
-        if ($request_uri !~ "^/(\w+)/\w+$"){
-            return 301 <%= ENV['APP_URL'] %>/$1;
+        if ($uri !~ "^(.*)"){
+            return 301 <%= ENV['APP_URL'] %>$request_uri;
         }
         auth_basic           on;
         proxy_pass http://app_server;
