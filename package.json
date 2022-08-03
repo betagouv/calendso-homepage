@@ -1,0 +1,31 @@
+{
+  "name": "template-design-system-de-l-etat",
+  "version": "1.4",
+  "description": "Démonstration du Design System de l'Etat.",
+  "main": "index.js",
+  "scripts": {
+    "checkHTML": "site-validator --verbose --url",
+    "checkHTMLLocal": "site-validator --verbose --local --url http://localhost:8080",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betagouv/template-design-system-de-l-etat.git"
+  },
+  "author": "estelle.comment@beta.gouv.fr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/betagouv/template-design-system-de-l-etat/issues"
+  },
+  "homepage": "https://github.com/betagouv/template-design-system-de-l-etat#readme",
+  "dependencies": {
+    "@gouvfr/dsfr": "^1.4",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
