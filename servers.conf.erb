@@ -12,6 +12,10 @@ server {
         auth_basic           on;
         proxy_pass http://app_server;  
     }
+    location = /api/license {
+        auth_basic           on;
+        proxy_pass http://app_server;  
+    }
     location ^~ /static/ {
         auth_basic           on;
         proxy_pass http://app_server;  

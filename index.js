@@ -36,6 +36,12 @@ app.get('/privacy-policy', (req, res) => {
   })
 })
 
+app.get('/api/license', (req, res) => {
+  res.json({
+    valid: true
+  })
+})
+
 module.exports = app.listen(port, () => {
   console.log(`${appName} listening at http://localhost:${port}`)
 })
