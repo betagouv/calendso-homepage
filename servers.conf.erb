@@ -21,6 +21,6 @@ server {
         proxy_pass http://app_server;  
     }
     location / {
-        rewrite ^ <%= ENV['APP_URL'] %>$request_uri permanent;
+        return 301 <%= ENV['APP_URL'] %>$request_uri;
     }
 }
