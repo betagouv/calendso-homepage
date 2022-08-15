@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 
-const appName = `Calendso`
+const appName = `Calendso beta.gouv.fr`
 const appDescription = "Calendso de l'incubateur beta.gouv.fr"
 const appUrl = process.env.APP_URL
 const appRepo = 'https://github.com/betagouv/calendso-homepage'
